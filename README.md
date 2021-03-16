@@ -27,23 +27,30 @@
   - SpotList.js  (Get spots' information from API and display in table)
 
 ### 說明
-**ScenicSpotSite.js**裡定義的routing rules:
-```
-<Switch>
-   <Route exact path="/scenicSpot" component={AllSpot} />
-   <Route path="/scenicSpot/:city?" component={CitySpot} />
-   <Redirect from="/" to="/scenicSpot" />
-</Switch>
-```
-- 路徑`/scenicSpot`會導向顯示所有景點的頁面(component: **AllSpot**)
-- 路徑`/scenicSpot/{City}`會導向顯示該縣市景點的頁面(component: **CitySpot**)
-- 用顯示全部景點的頁面作為首頁，所以將跟路徑`/`導向`/scenicSpot`
+1. **ScenicSpotSite.js**裡定義的routing rules:
+  ```
+  <Switch>
+     <Route exact path="/scenicSpot" component={AllSpot} />
+     <Route path="/scenicSpot/:city?" component={CitySpot} />
+     <Redirect from="/" to="/scenicSpot" />
+  </Switch>
+  ```
+  - 路徑`/scenicSpot`會導向顯示所有景點的頁面(component: **AllSpot**)
+  - 路徑`/scenicSpot/{City}`會導向顯示該縣市景點的頁面(component: **CitySpot**)
+  - 用顯示全部景點的頁面作為首頁，所以將跟路徑`/`導向`/scenicSpot`
 
-**AllSpot.js**和**CitySpot.js**會顯示一個簡單的標題，並呼叫component: **SpotList**，**AllSpot**在呼叫時會傳入property: `spotType="All"`，**CitySpot**在呼叫時會傳入property: `spotType="City"`和`cityName={props.match.params.city}`，其中`props.match.params.city`為routing時傳入**CitySpot**的property。
+2. **AllSpot.js**和**CitySpot.js**會顯示一個簡單的標題，並呼叫component: **SpotList**，**AllSpot**在呼叫時會傳入property: `spotType="All"`，**CitySpot**在呼叫時會傳入property: `spotType="City"`和`cityName={props.match.params.city}`，其中`props.match.params.city`為routing時傳入**CitySpot**的property。
 
-**SpotList.js**會根據`props.spotType`是All還是City決定要呼叫哪個API，並將API回傳的結果存進state: `spot_list`，再將`spot_list`中的內容用表格顯示。
+3. **SpotList.js**會根據`props.spotType`是All還是City決定要呼叫哪個API，並將API回傳的結果存進state: `spot_list`，再將`spot_list`中的內容用表格顯示。
 
-**api.js**中建立了一個axios instance，並包含兩個function: `getAllSpot(request_data)`和`getCitySpot(request_data)`，透過axios instance對**MOTC Transport API V2**發送請求。
+4. **api.js**中建立了一個axios instance，並包含兩個function: `getAllSpot(request_data)`和`getCitySpot(request_data)`，透過axios instance對**MOTC Transport API V2**發送請求。
+
+## Demo
+- 全部景點
+![image](https://github.com/JJJamieee/React-MOTC-Transport-API/blob/main/demo1.gif)
+
+- 縣市景點
+![image](https://github.com/JJJamieee/React-MOTC-Transport-API/blob/main/demo2.gif)
 
 ## 使用及參考資源：
 - This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
