@@ -61,8 +61,7 @@ function SpotList(props) {
     useEffect(() => {
         //when the first time get into the page
         if (!spot_list.length)
-            // getSpotList();
-            console.log(spot_list.length);
+            getSpotList();
     });
 
     useEffect(() => {
