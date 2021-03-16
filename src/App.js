@@ -4,6 +4,7 @@ import ScenicSpotSite from './containers/ScenicSpotSite';
 
 function App() {
   return (
+    //set root directory
     <BrowserRouter>
       <div className="App">
         <ScenicSpotSite />

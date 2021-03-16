@@ -5,6 +5,14 @@ body{
 .container{
     margin-left: 5em;
     margin-right: 5em;
+    margin-top: 60px;
+}
+
+.top-button{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    cursor: pointer;
 }
 
 .navbar{
@@ -14,6 +22,9 @@ body{
     padding-left: 5em;
     padding-right: 5em;
     display: flex;
+    position: fixed;
+    width: 100%;
+    top: 0;
 }
 
 .nav-item{
@@ -92,4 +103,20 @@ body{
 
 .dropdown-link-right{
     margin-right: 2em;
+}
+
+.spotList{
+    border-collapse: collapse;
+    border-color: #006aa6;
+    border-width: 2px;
+    margin-left:auto; 
+    margin-right:auto;
+}
+
+th, td{
+    min-width: 180px;
+}
+
+.longThTd{
+    min-width: 300px;
 }

@@ -1,11 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
+import SpotList from './SpotList';
 
-class AllSpot extends Component {
-    render() {
-        return (
+function AllSpot() {
+    return (
+        <React.Fragment>
             <h1>全部景點</h1>
-        )
-    }
+            <SpotList spotType="All" />
+        </React.Fragment>
+    )
 }
 
 export default AllSpot;
